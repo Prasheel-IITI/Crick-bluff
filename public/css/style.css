@@ -3,9 +3,43 @@
     text-decoration: none;
 }
 body{
-    background-image: url("img1.jpg");
+    background-image: url("");
+    background-repeat: initial;
     background-size: cover;
     background-attachment: inherit;
+    
+}
+#ul_1{
+    margin-top: 10vw;
+    margin-right: 10vw;
+}
+#ul_1 li {
+    width: 20vw;
+    height: 6vw;
+
+}
+#register{
+    background-color: red;
+    
+}
+#register a{
+    color: white;
+}
+
+
+
+
+#login{
+    background-color: white;
+    
+}
+#login a{
+    color: red;
+}
+
+#ul_1 li a{
+    
+    font-size: 5vw;
 }
 h1{
     color: red;
@@ -22,7 +56,7 @@ li{
     float: right;
     list-style:none;
     font-size: 1.4vw;
-    background-color:  #c1cfcc;
+    background-color:  white;
     color:black;
     width: 13vw;
     height: 2.3vw;
@@ -33,15 +67,35 @@ li:hover{
     color: #ff2400;
 }
 #input1{
-    margin-top: 18vw;
-    margin-left: 4vw;
+    margin-left: 18vw;
     border-radius: 5px;
     font-size: 2vw;
-    border: transparent;
+    border: none;
+}
+.username{
+    border: none;
+    font-size: 2.4vw;
+    box-shadow: 0.1vw 0.3vw 0.3vw 0.1vw #888888;
+    
+}
+.password{
+    font-size: 2.4vw;
+    border: none;
+    box-shadow: 0.1vw 0.3vw 0.3vw 0.1vw #888888;
+}
+#form{
+    margin-left: 50vw;
+    margin-top: 4vw;
 }
 button{
-    margin-top: 18vw;
+    background-color:red;
     border-radius: 5px;
     font-size: 2vw;
-    border: transparent;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0.1vw 0.3vw 0.3vw 0.1vw #888888;
+}
+#signup{
+    margin-top: 7vw;;
+    margin-left:50vw;
 }

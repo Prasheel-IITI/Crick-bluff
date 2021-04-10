@@ -2,7 +2,11 @@ const express=require('express');
 const bodyParser= require('body-parser');
 const ejs=require('ejs');
 const http=require("https");
+const { resolveSoa } = require('dns');
 const app=express();
+
+require(__dirname + "/src/db/conn");
+const Register=require(__dirname +"/src/models/registers");
 
 app.set('view engine','ejs');
 
@@ -53,7 +57,27 @@ app.get("/",function(request,response){
     req.end();
     
 })
-
+app.get("/login",(req,res)=>{
+    res.render("login");
+});
+var account_name;
+app.post("/login",async(req,res)=>{
+    try {
+        const username=req.body.username;
+        account_name=username;
+        const password=req.body.password;
+        const name=await Register.findOne({username:username});
+        if(name.password===password){
+            res.redirect("/");
+        }
+        else{
+            res.send("invalid password");
+        }
+        
+    } catch (error) {
+        res.send("invalid username");
+    }
+})
 // app.get("/json",function(request,response){
 //     const options = {
 //         "method": "GET",
@@ -99,6 +123,6 @@ app.post("/",function(req,res){
     res.redirect("/");
 })
 
-app.listen(3000,function(){
+app.listen(5000,function(){
     console.log("Server running on port 3000");
 })
