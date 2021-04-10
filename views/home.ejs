@@ -1,0 +1,13 @@
+<%- include('header') %>
+
+<div class="jumbotron">
+    <h1 class="display-4"><%= team1  %>: <%= score%>/<%=wickets%> (<%=overs%>) vs <%= team2 %></h1>
+    <p class="lead"></p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <form action="/" method="post">
+        <button type="submit" class="btn btn-secondary">Refresh</button>
+    </form>
+  </div>
+
+<%- include('footer') %>
